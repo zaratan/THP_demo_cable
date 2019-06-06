@@ -20,28 +20,28 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: app
+
+  # The password associated with the postgres role (username).
+  password: app
+
+  # Connect on a TCP socket. Omitted by default since the client uses a
+  # domain socket that doesn't need configuration. Windows does not have
+  # domain sockets, so uncomment these lines.
+  host: 0.0.0.0
+
+  # The TCP port the server listens on. Defaults to 5432.
+  # If your server runs on a different port number, change accordingly.
+  port: 5433
 
 development:
   <<: *default
-  database: THP_demo_actioncable_development
+  database: demo_ac_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: THP_demo_actioncable
-
-  # The password associated with the postgres role (username).
-  #password:
-
-  # Connect on a TCP socket. Omitted by default since the client uses a
-  # domain socket that doesn't need configuration. Windows does not have
-  # domain sockets, so uncomment these lines.
-  #host: localhost
-
-  # The TCP port the server listens on. Defaults to 5432.
-  # If your server runs on a different port number, change accordingly.
-  #port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: THP_demo_actioncable_test
+  database: demo_ac_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -78,8 +78,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: THP_demo_actioncable_production
-  username: THP_demo_actioncable
-  password: <%= ENV['THP_DEMO_ACTIONCABLE_DATABASE_PASSWORD'] %>
