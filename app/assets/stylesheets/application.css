@@ -13,3 +13,47 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  height: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 2;
+  font-family: "radnika_next";
+  height: 100%;
+}
+
+#app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: darkgreen;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: green;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+

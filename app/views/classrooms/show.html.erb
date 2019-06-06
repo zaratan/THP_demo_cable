@@ -1,0 +1,21 @@
+<main id="classroom-main">
+  <header class="main-header">
+    <h1><%= @classroom.title %></h1>
+    <p><%= @classroom.description %></p>
+  </header>
+  <section>
+    <header>
+      <h2>
+        Liste d'utilisateurs
+      </h2>
+    </header>
+    <ul>
+      <% @classroom.users.each do |user| %>
+        <li>
+          <span class="connected-indic" /></span>
+          <span class="user-email"><%= user.email %></span>
+        </li>
+      <%end %>
+    </ul>
+  </section>
+</main>

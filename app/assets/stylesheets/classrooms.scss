@@ -1,3 +1,57 @@
 // Place all the styles related to the classrooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#classroom-main {
+  .main-header {
+    margin-left: 3rem;
+    
+    h1 {
+      margin-bottom: 1rem;
+    }
+    
+    p { 
+      margin: -2rem 0 0 0 ;
+      font-size: 12px;
+    }
+  }
+  section {
+    h2 { 
+      margin: 0 0 0 3rem; 
+    }
+    
+    ul { 
+      margin-left: 5rem; 
+    }
+
+    li {
+      line-height: 2rem;
+      display: flex;
+    }
+
+    .user-email {
+      margin-left: .5rem;
+    }
+
+    .connected-indic {
+      height: 1px;
+      align-self: center;
+      padding: 0.3rem;
+      border-radius: 50%;
+      border: 1px solid #888;
+
+    }
+
+    .green {
+      background-color: #289612;
+    }
+
+    .red {
+      background-color: #961212;
+    }
+
+    .yellow {
+      background-color: #968412;
+    }
+  }
+}
