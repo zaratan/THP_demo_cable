@@ -27,4 +27,16 @@ class User < ApplicationRecord
 
   has_many :attendances, dependent: :destroy
   has_many :classrooms, through: :attendances
+
+  def connect(classroom:)
+    attendance = attendances.find_by(classroom: classroom)
+    attendance.update(status: :online)
+    ClassroomChannel.broadcast_to(classroom, user: self, attendance: attendance)
+  end
+
+  def disconnect(classroom:)
+    attendance = attendances.find_by(classroom: classroom)
+    attendance.update(status: :offline)
+    ClassroomChannel.broadcast_to(classroom, user: self, attendance: attendance)
+  end
 end

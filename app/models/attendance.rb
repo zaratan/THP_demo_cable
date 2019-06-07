@@ -5,6 +5,7 @@
 # Table name: attendances
 #
 #  id           :bigint           not null, primary key
+#  status       :integer          default("offline")
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  classroom_id :bigint
@@ -24,4 +25,6 @@
 class Attendance < ApplicationRecord
   belongs_to :user
   belongs_to :classroom
+
+  enum status: { offline: 0, online: 1, away: 2 }
 end

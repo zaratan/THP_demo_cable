@@ -1,4 +1,4 @@
-<main id="classroom-main">
+<main id="classroom-main" data-classroom-id="<%= @classroom.id %>">
   <header class="main-header">
     <h1><%= @classroom.title %></h1>
     <p><%= @classroom.description %></p>
@@ -10,10 +10,10 @@
       </h2>
     </header>
     <ul>
-      <% @classroom.users.each do |user| %>
-        <li>
-          <span class="connected-indic"></span>
-          <span class="user-email"><%= user.email %></span>
+      <% @attendances.each do |attendance| %>
+        <li id="user-attendance-<%= attendance.user.id %>">
+          <span class="connected-indic <%= attendance.online? ? "green" : "red" %>"></span>
+          <span class="user-email"><%= attendance.user.email %></span>
         </li>
       <%end %>
     </ul>

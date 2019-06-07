@@ -5,6 +5,7 @@
 # Table name: attendances
 #
 #  id           :bigint           not null, primary key
+#  status       :integer          default("offline")
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  classroom_id :bigint
